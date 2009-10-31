@@ -1,0 +1,7 @@
+dozerlos
+
+compile:
+make
+
+install:
+copy dozerl-xx.xx.xx to /boot
