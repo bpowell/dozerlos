@@ -36,4 +36,12 @@ mboot:
 
 [global start]
 start:
+	;the multiboot information is stored in ebx and
+	; eax.  push it onto the stack so our next function 
+	; can grab everything that we need.
+	push ebx
+	push eax
+	[extern mbinfo]
+	call mbinfo
+	
 	jmp $	;hang for all time
