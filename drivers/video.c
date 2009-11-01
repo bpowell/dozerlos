@@ -47,7 +47,7 @@ void move_cursor()
 	outb(0x3d5, temp);
 }
 
-void putch(uchar c)
+void putch(unsigned char c)
 {
 	unsigned short *where;
 	unsigned att = color << 8;

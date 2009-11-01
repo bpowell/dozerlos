@@ -1,6 +1,8 @@
 #ifndef _SYSTEM_H_
 #define _SYSTEM_H_
 
+typedef int size_t;
+
 //port.c functions
 extern void outb(unsigned short _port, unsigned char _data);
 extern unsigned char inb (unsigned short _port);

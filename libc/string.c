@@ -24,7 +24,7 @@ void itoa(char *buf, int base, int d)
 {
 	char *p = buf;
 	char *p1, *p2;
-	ulong ud = d;
+	unsigned long ud = d;
 	int divisor = 10;
 	
 	if(base == 'd' && d < 0){
