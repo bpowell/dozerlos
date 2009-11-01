@@ -36,5 +36,8 @@ start:
 	push eax
 	[extern mbinfo]
 	call mbinfo
+
+	[extern load_gdt]
+	call load_gdt
 	
 	jmp $	;hang for all time
