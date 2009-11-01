@@ -11,7 +11,7 @@ LD		= ld
 LFLAGS	= -melf_i386 -T link.ld -Ttext 0x00100000
 
 LIBOBJ	= port.o string.o mem.o
-O_BOOT	= start.o
+O_BOOT	= start.o mboot.o
 O_DRIVE	= video.o
 OBJ		= $(O_BOOT) $(O_DRIVE) $(LIBOBJ)
 
@@ -22,6 +22,9 @@ noclean: $(OBJ) dozerl-'$(VERSION)'
 #/boot files
 start.o:
 	$(ASM) $(AFLAGS) boot/start.asm -o start.o
+
+mboot.o: boot/mboot.c
+	$(CC) $(CFLAGS) -c boot/mboot.c
 
 #/driver files
 video.o:	drivers/video.c
