@@ -37,10 +37,6 @@ string.o: libc/string.c
 mem.o: libc/mem.c
 	$(CC) $(CFLAGS) -c libc/mem.c
 
-libc.a: $(LIBOBJ)
-	ar rvu libc.a $(LIBOBJ)
-	ranlib libc.a
-
 #link
 dozerl-'$(VERSION)': $(OBJ)
 	$(LD) $(LFLAGS) -o dozerl-$(VERSION) $(OBJ)
