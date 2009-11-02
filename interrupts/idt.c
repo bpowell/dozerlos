@@ -34,7 +34,7 @@ void add_idt(unsigned char num, unsigned long base, unsigned short sel, unsigned
 	idt[num].flags		= flags;
 }
 
-void ini_idt()
+void init_idt()
 {
 	idtp.limit = (sizeof(struct idt_entry) * 256) -1;
 	idtp.base =  &idt;

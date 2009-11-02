@@ -13,4 +13,8 @@ extern void putch(unsigned char c);
 extern void change_textcolor(int fore, int back);
 extern void printk(const char *format, ...);
 
+//idt.c functions
+extern void init_idt();
+extern void add_idt(unsigned char num, unsigned long base, unsigned short sel, unsigned char flags)
+
 #endif
