@@ -15,8 +15,8 @@ load_gdt:
 	
 switch:
 	[extern main]
-	;call main
-	hlt
+	call main
+
 	
 ;GDT section
 GDTR:

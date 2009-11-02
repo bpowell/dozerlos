@@ -14,11 +14,14 @@ LIBOBJ	= port.o string.o mem.o
 O_BOOT	= start.o mboot.o
 O_DRIVE	= video.o
 O_INTER	= idt.o
-OBJ		= $(O_BOOT) $(O_DRIVE) $(O_INTER) $(LIBOBJ)
+OBJ		= $(O_BOOT) $(O_DRIVE) $(O_INTER) $(LIBOBJ) main.o
 
 defaults:noclean
 noclean: $(OBJ) dozerl-'$(VERSION)'
 
+#/kernel
+main.o: kernel/main.c
+	$(CC) $(CFLAGS) -c kernel/main.c
 
 #/boot files
 start.o:
