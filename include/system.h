@@ -15,6 +15,6 @@ extern void printk(const char *format, ...);
 
 //idt.c functions
 extern void init_idt();
-extern void add_idt(unsigned char num, unsigned long base, unsigned short sel, unsigned char flags)
+extern void add_idt(unsigned char num, unsigned long base, unsigned short sel, unsigned char flags);
 
 #endif
