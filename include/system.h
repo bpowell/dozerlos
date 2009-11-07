@@ -39,4 +39,8 @@ extern void timer_wait(float ticks);
 extern void init_timer();
 extern void uptime();
 
+//keyboard.c
+extern void keyboard_handler(struct regs *r);
+extern void init_keyboard();
+
 #endif

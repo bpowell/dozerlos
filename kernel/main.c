@@ -15,10 +15,11 @@ void main()
 	init_isr();
 	init_irq();
 	init_timer();
+	init_keyboard();
 
 
 
-	int fail = 1/0;
+	//int fail = 1/0;
 
 	asm("sti");
 	for(;;);
