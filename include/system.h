@@ -17,4 +17,20 @@ extern void printk(const char *format, ...);
 extern void init_idt();
 extern void add_idt(unsigned char num, unsigned long base, unsigned short sel, unsigned char flags);
 
+//init.asm functions
+extern void init_isr();
+extern void init_irq();
+
+struct regs
+{
+	unsigned int ds, es, fs, gs;
+	unsigned int edi, esi, ebp, esp, ebx, edx, ecx, eax;
+	unsigned int num, err_code;
+	unsigned int eip, cs, eflags, useresp, ss;
+};
+
+//irq.c functions
+extern void del_irq(int irq);
+extern void add_irq(int irq,  void (*handler)(struct regs *r));
+
 #endif
