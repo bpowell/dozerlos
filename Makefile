@@ -12,7 +12,7 @@ LFLAGS	= -melf_i386 -T link.ld -Ttext 0x00100000
 
 LIBOBJ	= port.o string.o mem.o
 O_BOOT	= start.o mboot.o gdt.o
-O_DRIVE	= video.o
+O_DRIVE	= video.o pit.o
 O_INTER	= idt.o interrupts.o init.o handler.o
 OBJ		= $(O_BOOT) $(O_DRIVE) $(O_INTER) $(LIBOBJ) main.o
 
@@ -36,6 +36,9 @@ gdt.o: boot/gdt.asm
 #/driver files
 video.o:	drivers/video.c
 	$(CC) $(CFLAGS) -c drivers/video.c
+
+pit.o:	drivers/pit.c
+	$(CC) $(CFLAGS) -c drivers/pit.c
 
 #/interrupts files
 idt.o: interrupts/idt.c

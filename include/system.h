@@ -33,4 +33,10 @@ struct regs
 extern void del_irq(int irq);
 extern void add_irq(int irq,  void (*handler)(struct regs *r));
 
+//pit.c
+extern void timer_handler(struct regs *r);
+extern void timer_wait(float ticks);
+extern void init_timer();
+extern void uptime();
+
 #endif
