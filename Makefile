@@ -10,7 +10,7 @@ AFLAGS	= -f elf
 LD		= ld
 LFLAGS	= -melf_i386 -T link.ld -Ttext 0x00100000
 
-LIBOBJ	= port.o string.o mem.o
+LIBOBJ	= port.o string.o mem.o trace.o
 O_BOOT	= start.o mboot.o gdt.o
 O_DRIVE	= video.o pit.o keyboard.o update_keys.o
 O_INTER	= idt.o interrupts.o init.o handler.o
@@ -68,6 +68,9 @@ string.o: libc/string.c
 
 mem.o: libc/mem.c
 	$(CC) $(CFLAGS) -c libc/mem.c
+
+trace.o: libc/trace.c
+	$(CC) $(CFLAGS) -c libc/trace.c
 
 #link
 dozerl-'$(VERSION)': $(OBJ)
