@@ -14,6 +14,13 @@ void timer_handler(struct regs *r)
 	}
 }
 
+
+/* 
+ * 18 ticks = 1 second
+ *
+ */
+
+
 void timer_wait(float ticks)
 {
 	unsigned long eticks;
